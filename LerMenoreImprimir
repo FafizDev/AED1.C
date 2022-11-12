@@ -1,0 +1,34 @@
+//#include <stdio.h>
+
+void LerMenoreImprimir(int linha, int coluna, float m[linha][coluna]);
+
+//int main(){
+    int linha,coluna,i,j;
+    float menor=10000;
+    scanf("%d %d",&linha,&coluna);
+    float m[linha][coluna];
+    for(i=0;i<linha;i++){
+        for(j=0;j<coluna;j++){
+            scanf("%f",&m[i][j]);
+        }
+    }//
+    LerMenoreImprimir(linha,coluna,m);
+
+    //return 0;
+}//
+
+void LerMenoreImprimir(int linha, int coluna,float m[linha][coluna]){
+    int aux,aux1,i,j;
+    float menor=10000;
+    for(i=0;i<linha;i++){
+        for(j=0;j<coluna;j++){
+            if(menor>m[i][j]){
+                menor=m[i][j];
+                aux=i;
+                aux1=j;
+            }
+        }
+    }
+    
+    printf("\nO menor valor é %.1f, que esta na linha %d e coluna %d\n",menor,aux,aux1);
+}
